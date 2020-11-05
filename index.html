@@ -66,6 +66,7 @@
 			<li><a href="#contact">CONTACT</a></li>
 		</ul>
 	</nav>
+
     <div class='fas fa-hamburger' style='font-size:38px; color:yellow; cursor: pointer;'></div>
 
 	<a href="#" class="logo"> <img src="images/logo.jpg" alt=""></a>
@@ -360,10 +361,17 @@
 
 <!-- script part starts -->
 <script>
-    $(document).ready(function(){
-        console.log("Clicked.")
+    // console.log(window.innerWidth);
+    if (window.innerWidth >= 765){
+        document.querySelector(".fa-hamburger").style.display = "none";
+    }
+    else{
+        document.querySelector(".fa-hamburger").style.display = "block";
+    }
 
+    $(document).ready(function(){
          $('.fa-hamburger').click(function(){
+            console.log("Clicked.")
         $(this).toggleClass('fa-times');
         $('nav').toggleClass('nav-toggle');
     });
